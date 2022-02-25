@@ -1,0 +1,5102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE workspaceElements PUBLIC "-//CPN//DTD CPNXML 1.0//EN" "http://cpntools.org/DTD/6/cpn.dtd">
+
+<workspaceElements>
+  <generator tool="CPN Tools"
+             version="4.0.1"
+             format="6"/>
+  <cpnet>
+    <globbox>
+      <block id="ID1412310166">
+        <id>Standard priorities</id>
+        <ml id="ID1412310255">val P_HIGH = 100;
+          <layout>val P_HIGH = 100;</layout>
+        </ml>
+        <ml id="ID1412310292">val P_NORMAL = 1000;
+          <layout>val P_NORMAL = 1000;</layout>
+        </ml>
+        <ml id="ID1412310322">val P_LOW = 10000;
+          <layout>val P_LOW = 10000;</layout>
+        </ml>
+      </block>
+      <block id="ID1">
+        <id>Standard declarations</id>
+        <color id="ID85042">
+          <id>UNIT</id>
+          <unit/>
+          <layout>colset UNIT = unit;</layout>
+        </color>
+        <color id="ID4">
+          <id>BOOL</id>
+          <bool/>
+        </color>
+        <color id="ID3">
+          <id>INT</id>
+          <int/>
+        </color>
+        <color id="ID1412312409">
+          <id>INTINF</id>
+          <intinf/>
+          <layout>colset INTINF = intinf;</layout>
+        </color>
+        <color id="ID1412312425">
+          <id>TIME</id>
+          <time/>
+          <layout>colset TIME = time;</layout>
+        </color>
+        <color id="ID1412322990">
+          <id>REAL</id>
+          <real/>
+          <layout>colset REAL = real;</layout>
+        </color>
+        <color id="ID5">
+          <id>STRING</id>
+          <string/>
+        </color>
+        <color id="ID1412388204">
+          <id>USERNAME</id>
+          <string/>
+          <layout>colset USERNAME=string;</layout>
+        </color>
+        <color id="ID1413864980">
+          <id>PASSWORD</id>
+          <string/>
+          <layout>colset PASSWORD= string;</layout>
+        </color>
+        <color id="ID1413870791">
+          <id>UNxPW</id>
+          <record>
+            <recordfield>
+              <id>un</id>
+              <id>USERNAME</id>
+            </recordfield>
+            <recordfield>
+              <id>pw</id>
+              <id>PASSWORD</id>
+            </recordfield>
+          </record>
+          <layout>colset UNxPW = record un:USERNAME * pw:PASSWORD;</layout>
+        </color>
+        <var id="ID1413920586">
+          <type>
+            <id>UNxPW</id>
+          </type>
+          <id>UI_c</id>
+          <id>AS_c</id>
+          <layout>var UI_c, AS_c:UNxPW;</layout>
+        </var>
+        <color id="ID1413968287">
+          <id>VMLIST</id>
+          <string/>
+          <layout>colset VMLIST = string;</layout>
+        </color>
+        <color id="ID1413968290">
+          <id>VMID</id>
+          <list>
+            <id>VMLIST</id>
+          </list>
+          <layout>colset VMID = list VMLIST;</layout>
+        </color>
+        <color id="ID1413962260">
+          <id>USERNAMExVMID</id>
+          <record>
+            <recordfield>
+              <id>un</id>
+              <id>USERNAME</id>
+            </recordfield>
+            <recordfield>
+              <id>vmid</id>
+              <id>VMID</id>
+            </recordfield>
+          </record>
+          <layout>colset USERNAMExVMID = record un:USERNAME * vmid:VMID;</layout>
+        </color>
+        <var id="ID1413962263">
+          <type>
+            <id>USERNAMExVMID</id>
+          </type>
+          <id>unvm</id>
+          <layout>var unvm:USERNAMExVMID;</layout>
+        </var>
+        <color id="ID1412386300">
+          <id>CPU</id>
+          <string/>
+          <layout>colset CPU = string;</layout>
+        </color>
+        <color id="ID1412386303">
+          <id>RAM</id>
+          <int/>
+          <layout>colset RAM = int;</layout>
+        </color>
+        <color id="ID1412386305">
+          <id>DISK</id>
+          <int/>
+          <layout>colset DISK = int;</layout>
+        </color>
+        <color id="ID1412383244">
+          <id>USERNAMExCPUxRAMxDISK</id>
+          <record>
+            <recordfield>
+              <id>un</id>
+              <id>USERNAME</id>
+            </recordfield>
+            <recordfield>
+              <id>cpu</id>
+              <id>CPU</id>
+            </recordfield>
+            <recordfield>
+              <id>ram</id>
+              <id>RAM</id>
+            </recordfield>
+            <recordfield>
+              <id>disk</id>
+              <id>DISK</id>
+            </recordfield>
+          </record>
+          <layout>colset USERNAMExCPUxRAMxDISK = record un:USERNAME * cpu:CPU *ram:RAM * disk:DISK;</layout>
+        </color>
+        <var id="ID1412445936">
+          <type>
+            <id>USERNAMExCPUxRAMxDISK</id>
+          </type>
+          <id>VM_req</id>
+          <id>UQ_q</id>
+          <layout>var VM_req, UQ_q:USERNAMExCPUxRAMxDISK;</layout>
+        </var>
+        <color id="ID1412390102">
+          <id>LOC</id>
+          <string/>
+          <layout>colset LOC = string;</layout>
+        </color>
+        <color id="ID1412390105">
+          <id>DC</id>
+          <string/>
+          <layout>colset DC = string;</layout>
+        </color>
+        <color id="ID1412381449">
+          <id>LOCxDC</id>
+          <record>
+            <recordfield>
+              <id>loc</id>
+              <id>LOC</id>
+            </recordfield>
+            <recordfield>
+              <id>dc</id>
+              <id>DC</id>
+            </recordfield>
+          </record>
+          <layout>colset LOCxDC = record loc:LOC * dc: DC;</layout>
+        </color>
+        <var id="ID1412448545">
+          <type>
+            <id>LOCxDC</id>
+          </type>
+          <id>srvr</id>
+          <layout>var srvr:LOCxDC;</layout>
+        </var>
+        <color id="ID1412379680">
+          <id>VMCONF</id>
+          <product>
+            <id>USERNAMExCPUxRAMxDISK</id>
+            <id>LOCxDC</id>
+          </product>
+          <layout>colset VMCONF = product USERNAMExCPUxRAMxDISK * LOCxDC;</layout>
+        </color>
+        <var id="ID1412391394">
+          <type>
+            <id>VMCONF</id>
+          </type>
+          <id>VM_req_srvr</id>
+          <layout>var VM_req_srvr:VMCONF;</layout>
+        </var>
+        <color id="ID1412329371">
+          <id>IP</id>
+          <string/>
+          <layout>colset IP = string;</layout>
+        </color>
+        <color id="ID1412329770">
+          <id>MAC</id>
+          <string/>
+          <layout>colset MAC = string;</layout>
+        </color>
+        <var id="ID1412334100">
+          <type>
+            <id>MAC</id>
+          </type>
+          <id>get_vnic</id>
+          <id>ret_vnic</id>
+          <layout>var get_vnic, ret_vnic:MAC;</layout>
+        </var>
+        <var id="ID1412349393">
+          <type>
+            <id>MAC</id>
+          </type>
+          <id>mac</id>
+          <layout>var mac:MAC;</layout>
+        </var>
+        <color id="ID1412330181">
+          <id>IPxMAC</id>
+          <record>
+            <recordfield>
+              <id>ip</id>
+              <id>IP</id>
+            </recordfield>
+            <recordfield>
+              <id>mac</id>
+              <id>MAC</id>
+            </recordfield>
+          </record>
+          <layout>colset IPxMAC = record ip:IP * mac:MAC;</layout>
+        </color>
+        <var id="ID1412335148">
+          <type>
+            <id>IPxMAC</id>
+          </type>
+          <id>ret_dhcp</id>
+          <id>get_dhcp</id>
+          <layout>var ret_dhcp, get_dhcp: IPxMAC;</layout>
+        </var>
+        <color id="ID1412331240">
+          <id>DI</id>
+          <string/>
+          <layout>colset DI = string;</layout>
+        </color>
+        <var id="ID1412333100">
+          <type>
+            <id>DI</id>
+          </type>
+          <id>get_di</id>
+          <id>ret_di</id>
+          <layout>var get_di, ret_di:DI;</layout>
+        </var>
+        <color id="ID1412340429">
+          <id>FCONF</id>
+          <product>
+            <id>VMCONF</id>
+            <id>DI</id>
+            <id>IPxMAC</id>
+          </product>
+          <layout>colset FCONF = product VMCONF * DI * IPxMAC;</layout>
+        </color>
+        <var id="ID1412344866">
+          <type>
+            <id>FCONF</id>
+          </type>
+          <id>config</id>
+          <layout>var config:FCONF;</layout>
+        </var>
+        <color id="ID1412545230">
+          <id>SERVICE</id>
+          <string/>
+          <layout>colset SERVICE = string;</layout>
+        </color>
+        <color id="ID1412545232">
+          <id>ISSUE</id>
+          <string/>
+          <layout>colset ISSUE = string;</layout>
+        </color>
+        <color id="ID1412545235">
+          <id>SERxISS</id>
+          <record>
+            <recordfield>
+              <id>s</id>
+              <id>SERVICE</id>
+            </recordfield>
+            <recordfield>
+              <id>i</id>
+              <id>ISSUE</id>
+            </recordfield>
+          </record>
+          <layout>colset SERxISS = record s:SERVICE * i:ISSUE;</layout>
+        </color>
+        <var id="ID1412545238">
+          <type>
+            <id>SERxISS</id>
+          </type>
+          <id>ser</id>
+          <id>rc</id>
+          <id>iss</id>
+          <layout>var ser,rc,iss:SERxISS;</layout>
+        </var>
+        <var id="ID1412748991">
+          <type>
+            <id>STRING</id>
+          </type>
+          <id>act</id>
+          <id>atk</id>
+          <layout>var act, atk: STRING;</layout>
+        </var>
+      </block>
+    </globbox>
+    <page id="ID6">
+      <pageattr name="Cloud Model"/>
+      <place id="ID1412323428">
+        <posattr x="-349.000000"
+                 y="84.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>HYP</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1412323429">
+          <posattr x="-303.000000"
+                   y="60.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">FCONF</text>
+        </type>
+        <initmark id="ID1412323430">
+          <posattr x="-292.000000"
+                   y="107.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1412323792">
+        <posattr x="71.000000"
+                 y="-252.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>NET</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-256.000000"
+               y="34.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1412323793">
+          <posattr x="118.500000"
+                   y="-275.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">IPxMAC</text>
+        </type>
+        <initmark id="ID1412323794">
+          <posattr x="14.000000"
+                   y="-218.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">10`{ip=&quot;192.168.0.1&quot;, mac =&quot;00:14:7B:EE:19:F8&quot;}</text>
+        </initmark>
+      </place>
+      <place id="ID1412323851">
+        <posattr x="168.000000"
+                 y="-42.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>DI</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1412323852">
+          <posattr x="215.000000"
+                   y="-65.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">STRING</text>
+        </type>
+        <initmark id="ID1412323853">
+          <posattr x="244.000000"
+                   y="-40.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">6`&quot;OS&quot;</text>
+        </initmark>
+      </place>
+      <place id="ID1412323913">
+        <posattr x="-105.000000"
+                 y="-42.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>NIC</text>
+        <ellipse w="54.000000"
+                 h="40.000000"/>
+        <token x="-96.000000"
+               y="-45.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1412323914">
+          <posattr x="-150.000000"
+                   y="-55.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">STRING</text>
+        </type>
+        <initmark id="ID1412323915">
+          <posattr x="-64.000000"
+                   y="-88.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;</text>
+        </initmark>
+      </place>
+      <place id="ID1412370757">
+        <posattr x="234.000000"
+                 y="71.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>HS</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1412370758">
+          <posattr x="234.000000"
+                   y="40.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">VMCONF</text>
+        </type>
+        <initmark id="ID1412370759">
+          <posattr x="290.000000"
+                   y="94.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1412393326">
+        <posattr x="434.000000"
+                 y="233.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>SL</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-9.000000"
+               y="22.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1412393327">
+          <posattr x="530.500000"
+                   y="196.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">USERNAMExCPUxRAMxDISK</text>
+        </type>
+        <initmark id="ID1413879525">
+          <posattr x="490.000000"
+                   y="256.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1412393979">
+        <posattr x="434.000000"
+                 y="-42.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>AR</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-46.000000"
+               y="38.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1412393980">
+          <posattr x="483.500000"
+                   y="-65.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">LOCxDC</text>
+        </type>
+        <initmark id="ID1412393981">
+          <posattr x="561.000000"
+                   y="-11.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">100`{loc=&quot;host2&quot;, dc=&quot;FRA&quot;}++
+25`{loc=&quot;host1&quot;, dc=&quot;FRA&quot;}</text>
+        </initmark>
+      </place>
+      <place id="ID1413732121">
+        <posattr x="-600.000000"
+                 y="642.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>UI</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-82.000000"
+               y="43.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1413732122">
+          <posattr x="-552.000000"
+                   y="618.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">UNxPW</text>
+        </type>
+        <initmark id="ID1413732123">
+          <posattr x="-561.000000"
+                   y="685.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`{un=&quot;sm&quot;, pw=&quot;t1&quot;}</text>
+        </initmark>
+      </place>
+      <place id="ID1413734883">
+        <posattr x="-284.000000"
+                 y="520.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>CA</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1413734884">
+          <posattr x="-236.000000"
+                   y="496.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">UNxPW</text>
+        </type>
+        <initmark id="ID1413734885">
+          <posattr x="-227.000000"
+                   y="543.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1413737648">
+        <posattr x="-630.000000"
+                 y="378.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>AS</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1413737649">
+          <posattr x="-582.000000"
+                   y="354.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">UNxPW</text>
+        </type>
+        <initmark id="ID1413737650">
+          <posattr x="-531.000000"
+                   y="401.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`{un=&quot;sm&quot;, pw=&quot;t1&quot;}</text>
+        </initmark>
+      </place>
+      <place id="ID1413740416">
+        <posattr x="-336.000000"
+                 y="420.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>INT</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1413740417">
+          <posattr x="-257.500000"
+                   y="396.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">USERNAMExVMID</text>
+        </type>
+        <initmark id="ID1413740418">
+          <posattr x="-279.000000"
+                   y="443.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1413743187">
+        <posattr x="-137.000000"
+                 y="630.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>DB</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1413743188">
+          <posattr x="-58.500000"
+                   y="606.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">USERNAMExVMID</text>
+        </type>
+        <initmark id="ID1413743189">
+          <posattr x="-2.000000"
+                   y="660.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`{un=&quot;sm&quot;, vmid=[]}++
+1`{un=&quot;ai&quot;, vmid=[&quot;vm1&quot;, &quot;vm2&quot;]}</text>
+        </initmark>
+      </place>
+      <place id="ID1413745961">
+        <posattr x="336.000000"
+                 y="504.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>UQ</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1413745962">
+          <posattr x="445.500000"
+                   y="480.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">USERNAMExCPUxRAMxDISK</text>
+        </type>
+        <initmark id="ID1413745963">
+          <posattr x="498.500000"
+                   y="527.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">4`{un=&quot;sm&quot;, cpu= &quot;2.4&quot;, ram=8, disk=512}</text>
+        </initmark>
+      </place>
+      <place id="ID1414084586">
+        <posattr x="-336.000000"
+                 y="210.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>VMs</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414084587">
+          <posattr x="-295.000000"
+                   y="186.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">VMID</text>
+        </type>
+        <initmark id="ID1414084588">
+          <posattr x="-279.000000"
+                   y="233.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1414231117">
+        <posattr x="42.000000"
+                 y="336.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>VMReq</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414231118">
+          <posattr x="89.000000"
+                   y="293.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">USERNAMExCPUxRAMxDISK</text>
+        </type>
+        <initmark id="ID1414231119">
+          <posattr x="98.000000"
+                   y="359.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1412323399">
+        <posattr x="-349.000000"
+                 y="-145.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>VM</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1412323400">
+          <posattr x="-303.000000"
+                   y="-168.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">FCONF</text>
+        </type>
+        <initmark id="ID1412323401">
+          <posattr x="-292.000000"
+                   y="-121.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1414365806">
+        <posattr x="-909.000000"
+                 y="58.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Services</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-87.000000"
+               y="79.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414365807">
+          <posattr x="-917.000000"
+                   y="20.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">SERxISS</text>
+        </type>
+        <initmark id="ID1414365808">
+          <posattr x="-815.000000"
+                   y="96.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`{s=&quot;webserver&quot;, i=&quot;rc&quot;}++
+1`{s=&quot;AS&quot;, i=&quot;conf&quot;}</text>
+        </initmark>
+      </place>
+      <place id="ID1414365809">
+        <posattr x="-630.000000"
+                 y="-182.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>soft_iss</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414365810">
+          <posattr x="-579.000000"
+                   y="-205.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">SERxISS</text>
+        </type>
+        <initmark id="ID1414365811">
+          <posattr x="-573.000000"
+                   y="-158.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1414365812">
+        <posattr x="-894.000000"
+                 y="-194.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Atk</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414365813">
+          <posattr x="-846.000000"
+                   y="-217.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">STRING</text>
+        </type>
+        <initmark id="ID1414365814">
+          <posattr x="-789.500000"
+                   y="-193.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`&quot;remote&quot;++
+1`&quot;local&quot;</text>
+        </initmark>
+      </place>
+      <place id="ID1414365815">
+        <posattr x="-906.000000"
+                 y="-84.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Rec</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-115.000000"
+               y="34.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414365816">
+          <posattr x="-906.000000"
+                   y="-115.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">SERxISS</text>
+        </type>
+        <initmark id="ID1414365817">
+          <posattr x="-890.000000"
+                   y="-48.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`{s=&quot;webserver&quot;, i=&quot;rc&quot;}++
+1`{s=&quot;AS&quot;, i=&quot;conf&quot;}</text>
+        </initmark>
+      </place>
+      <place id="ID1414367539">
+        <posattr x="-938.000000"
+                 y="-294.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>DoS</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414367540">
+          <posattr x="-890.000000"
+                   y="-317.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">STRING</text>
+        </type>
+        <initmark id="ID1414367541">
+          <posattr x="-881.000000"
+                   y="-270.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1414388621">
+        <posattr x="-630.000000"
+                 y="-432.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Action</text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414388622">
+          <posattr x="-582.000000"
+                   y="-455.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">STRING</text>
+        </type>
+        <initmark id="ID1414388623">
+          <posattr x="-563.500000"
+                   y="-401.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">1`&quot;config&quot;++
+1` &quot;DoS&quot;</text>
+        </initmark>
+      </place>
+      <trans id="ID1412323460"
+             explicit="false">
+        <posattr x="-349.000000"
+                 y="-42.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>VM_run</text>
+        <box w="174.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1412323461">
+          <posattr x="-445.000000"
+                   y="-11.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </cond>
+        <time id="ID1412323462">
+          <posattr x="-247.500000"
+                   y="-11.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1412323463">
+          <posattr x="-227.500000"
+                   y="-94.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1412323465">
+          <posattr x="-474.000000"
+                   y="-73.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <trans id="ID1412323978"
+             explicit="false">
+        <posattr x="0.000000"
+                 y="71.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>T1.5: Final_confs</text>
+        <box w="188.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1412337374">
+          <posattr x="107.000000"
+                   y="102.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">[#mac(ret_dhcp) = ret_vnic]</text>
+        </cond>
+        <time id="ID1412323980">
+          <posattr x="108.500000"
+                   y="102.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1412323981">
+          <posattr x="128.500000"
+                   y="19.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1412323983">
+          <posattr x="-132.000000"
+                   y="40.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <trans id="ID1412394635"
+             explicit="false">
+        <posattr x="434.000000"
+                 y="71.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Srvr_lookup</text>
+        <box w="110.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1412394636">
+          <posattr x="370.000000"
+                   y="102.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </cond>
+        <time id="ID1412394637">
+          <posattr x="503.500000"
+                   y="102.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1412394638">
+          <posattr x="523.500000"
+                   y="19.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1412394640">
+          <posattr x="341.000000"
+                   y="40.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <trans id="ID1413765424"
+             explicit="false">
+        <posattr x="-491.000000"
+                 y="520.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Auth_S</text>
+        <box w="60.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1413765425">
+          <posattr x="-475.000000"
+                   y="563.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">[#un(UI_c) = #un(AS_c) andalso #pw(UI_c) = #pw (AS_c)]</text>
+        </cond>
+        <time id="ID1413765426">
+          <posattr x="-446.500000"
+                   y="551.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1413765427">
+          <posattr x="-426.500000"
+                   y="468.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1413765429">
+          <posattr x="-559.000000"
+                   y="489.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <trans id="ID1413787862"
+             explicit="false">
+        <posattr x="-137.000000"
+                 y="520.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Ctrl_S</text>
+        <box w="60.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1413787863">
+          <posattr x="-21.500000"
+                   y="527.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">[#un(AS_c) = #un(unvm)]</text>
+        </cond>
+        <time id="ID1413787864">
+          <posattr x="-92.500000"
+                   y="551.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1413787865">
+          <posattr x="-72.500000"
+                   y="468.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1413787867">
+          <posattr x="-205.000000"
+                   y="489.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <trans id="ID1413844758"
+             explicit="false">
+        <posattr x="336.000000"
+                 y="336.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>VM_S</text>
+        <box w="60.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1414198735">
+          <posattr x="462.500000"
+                   y="367.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">[#un(UQ_q) = #un (VM_req)]</text>
+        </cond>
+        <time id="ID1413844760">
+          <posattr x="380.500000"
+                   y="367.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1413844761">
+          <posattr x="400.500000"
+                   y="284.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1413844763">
+          <posattr x="268.000000"
+                   y="305.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <trans id="ID1414075243"
+             explicit="false">
+        <posattr x="-336.000000"
+                 y="336.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>VMRreq</text>
+        <box w="60.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1414075244">
+          <posattr x="-375.000000"
+                   y="367.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </cond>
+        <time id="ID1414075245">
+          <posattr x="-291.500000"
+                   y="367.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1414075246">
+          <posattr x="-271.500000"
+                   y="284.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1414075248">
+          <posattr x="-404.000000"
+                   y="305.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <trans id="ID1414365794"
+             explicit="false">
+        <posattr x="-630.000000"
+                 y="-52.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Pre_Con</text>
+        <box w="90.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1414365795">
+          <posattr x="-576.000000"
+                   y="-12.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">[#s(ser) = #s(rc) andalso #i(ser) = #i(rc)]</text>
+        </cond>
+        <time id="ID1414365796">
+          <posattr x="-570.500000"
+                   y="-21.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1414365797">
+          <posattr x="-550.500000"
+                   y="-104.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1414365799">
+          <posattr x="-713.000000"
+                   y="-83.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <trans id="ID1414365800"
+             explicit="false">
+        <posattr x="-630.000000"
+                 y="-294.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Exploit_S</text>
+        <box w="84.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1414365801">
+          <posattr x="-681.000000"
+                   y="-263.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </cond>
+        <time id="ID1414365802">
+          <posattr x="-573.500000"
+                   y="-263.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </time>
+        <code id="ID1414365803">
+          <posattr x="-553.500000"
+                   y="-346.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </code>
+        <priority id="ID1414365805">
+          <posattr x="-710.000000"
+                   y="-325.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </priority>
+      </trans>
+      <arc id="ID1412323602"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412323460"/>
+        <placeend idref="ID1412323428"/>
+        <annot id="ID1412323603">
+          <posattr x="-326.500000"
+                   y="20.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">config</text>
+        </annot>
+      </arc>
+      <arc id="ID1412324049"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412323978"/>
+        <placeend idref="ID1412323792"/>
+        <annot id="ID1412324050">
+          <posattr x="9.000000"
+                   y="-120.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">ret_dhcp</text>
+        </annot>
+      </arc>
+      <arc id="ID1412324117"
+           orientation="PtoT"
+           order="2">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412323978"/>
+        <placeend idref="ID1412323851"/>
+        <annot id="ID1412324118">
+          <posattr x="92.000000"
+                   y="28.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">ret_di</text>
+        </annot>
+      </arc>
+      <arc id="ID1412324188"
+           orientation="PtoT"
+           order="2">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412323978"/>
+        <placeend idref="ID1412323913"/>
+        <annot id="ID1412324189">
+          <posattr x="-42.000000"
+                   y="-6.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">ret_vnic</text>
+        </annot>
+      </arc>
+      <arc id="ID1412324490"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412323978"/>
+        <placeend idref="ID1412323428"/>
+        <annot id="ID1412324491">
+          <posattr x="-206.000000"
+                   y="93.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">(VM_req_srvr, ret_di, ret_dhcp)</text>
+        </annot>
+      </arc>
+      <arc id="ID1412375110"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412323978"/>
+        <placeend idref="ID1412370757"/>
+        <annot id="ID1412375111">
+          <posattr x="162.000000"
+                   y="82.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">VM_req_srvr</text>
+        </annot>
+      </arc>
+      <arc id="ID1412398609"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412394635"/>
+        <placeend idref="ID1412393326"/>
+        <annot id="ID1412398610">
+          <posattr x="406.500000"
+                   y="153.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">VM_req</text>
+        </annot>
+      </arc>
+      <arc id="ID1412399283"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412394635"/>
+        <placeend idref="ID1412393979"/>
+        <annot id="ID1412399284">
+          <posattr x="450.000000"
+                   y="15.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">srvr</text>
+        </annot>
+      </arc>
+      <arc id="ID1412399960"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412394635"/>
+        <placeend idref="ID1412370757"/>
+        <annot id="ID1412399961">
+          <posattr x="330.000000"
+                   y="60.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">(VM_req,srvr)</text>
+        </annot>
+      </arc>
+      <arc id="ID1413768225"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413765424"/>
+        <placeend idref="ID1413732121"/>
+        <annot id="ID1413768226">
+          <posattr x="-532.000000"
+                   y="596.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">UI_c</text>
+        </annot>
+      </arc>
+      <arc id="ID1413771023"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413765424"/>
+        <placeend idref="ID1413737648"/>
+        <annot id="ID1413771024">
+          <posattr x="-577.000000"
+                   y="460.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">AS_c</text>
+        </annot>
+      </arc>
+      <arc id="ID1413779429"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413765424"/>
+        <placeend idref="ID1413734883"/>
+        <annot id="ID1413779430">
+          <posattr x="-387.000000"
+                   y="531.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">AS_c</text>
+        </annot>
+      </arc>
+      <arc id="ID1413793505"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413787862"/>
+        <placeend idref="ID1413743187"/>
+        <annot id="ID1413793506">
+          <posattr x="-116.000000"
+                   y="575.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">unvm</text>
+        </annot>
+      </arc>
+      <arc id="ID1413796330"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413787862"/>
+        <placeend idref="ID1413734883"/>
+        <annot id="ID1413796331">
+          <posattr x="-211.000000"
+                   y="531.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">AS_c</text>
+        </annot>
+      </arc>
+      <arc id="ID1413799158"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413787862"/>
+        <placeend idref="ID1413740416"/>
+        <annot id="ID1413799159">
+          <posattr x="-231.000000"
+                   y="452.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">unvm</text>
+        </annot>
+      </arc>
+      <arc id="ID1413853406"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413844758"/>
+        <placeend idref="ID1413745961"/>
+        <annot id="ID1413853407">
+          <posattr x="357.500000"
+                   y="420.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">UQ_q</text>
+        </annot>
+      </arc>
+      <arc id="ID1413856294"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413844758"/>
+        <placeend idref="ID1412393326"/>
+        <annot id="ID1413856295">
+          <posattr x="407.500000"
+                   y="298.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">VM_req</text>
+        </annot>
+      </arc>
+      <arc id="ID1414078359"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414075243"/>
+        <placeend idref="ID1413740416"/>
+        <annot id="ID1414078360">
+          <posattr x="-357.000000"
+                   y="378.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">unvm</text>
+        </annot>
+      </arc>
+      <arc id="ID1414087708"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414075243"/>
+        <placeend idref="ID1414084586"/>
+        <annot id="ID1414087709">
+          <posattr x="-405.000000"
+                   y="273.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">if #vmid(unvm) &lt;&gt; []
+then #vmid(unvm)
+else empty</text>
+        </annot>
+      </arc>
+      <arc id="ID1414247421"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414075243"/>
+        <placeend idref="ID1414231117"/>
+        <annot id="ID1414247422">
+          <posattr x="-147.000000"
+                   y="361.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">if not(#vmid(unvm) &lt;&gt; [])
+then 4`{un=&quot;sm&quot;, cpu=&quot;2.4&quot;, ram=8, disk=0}
+else empty</text>
+        </annot>
+      </arc>
+      <arc id="ID1414267082"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413844758"/>
+        <placeend idref="ID1414231117"/>
+        <annot id="ID1414267083">
+          <posattr x="189.000000"
+                   y="347.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">VM_req</text>
+        </annot>
+      </arc>
+      <arc id="ID1412323646"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412323460"/>
+        <placeend idref="ID1412323399"/>
+        <annot id="ID1412323647">
+          <posattr x="-326.500000"
+                   y="-93.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">config</text>
+        </annot>
+      </arc>
+      <arc id="ID1414365822"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365800"/>
+        <placeend idref="ID1414365812"/>
+        <annot id="ID1414365823">
+          <posattr x="-772.000000"
+                   y="-255.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">atk</text>
+        </annot>
+      </arc>
+      <arc id="ID1414365824"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365794"/>
+        <placeend idref="ID1414365815"/>
+        <annot id="ID1414365825">
+          <posattr x="-776.500000"
+                   y="-80.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">rc</text>
+        </annot>
+      </arc>
+      <arc id="ID1414365826"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365794"/>
+        <placeend idref="ID1414365809"/>
+        <annot id="ID1414365827">
+          <posattr x="-620.500000"
+                   y="-116.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">rc</text>
+        </annot>
+      </arc>
+      <arc id="ID1414365828"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365800"/>
+        <placeend idref="ID1414365809"/>
+        <annot id="ID1414365829">
+          <posattr x="-617.500000"
+                   y="-239.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">iss</text>
+        </annot>
+      </arc>
+      <arc id="ID1414365830"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365794"/>
+        <placeend idref="ID1414365806"/>
+        <annot id="ID1414365831">
+          <posattr x="-773.000000"
+                   y="20.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">ser</text>
+        </annot>
+      </arc>
+      <arc id="ID1414367883"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365800"/>
+        <placeend idref="ID1414367539"/>
+        <annot id="ID1414367884">
+          <posattr x="-793.000000"
+                   y="-290.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">if #i(iss) = &quot;rc&quot; andalso act=&quot;DoS&quot;
+then 1`&quot;DoS&quot;
+else empty</text>
+        </annot>
+      </arc>
+      <arc id="ID1414381604"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365800"/>
+        <placeend idref="ID1414231117"/>
+        <bendpoint id="ID1414382502"
+                   serial="1">
+          <posattr x="84.000000"
+                   y="-294.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <annot id="ID1414381605">
+          <posattr x="-382.000000"
+                   y="-269.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">if #i(iss)= &quot;config&quot; andalso act=&quot;config&quot;
+then 1`{un =&quot;sm&quot;, cpu=&quot;2.4&quot;, ram =48, disk =5000}
+else empty</text>
+        </annot>
+      </arc>
+      <arc id="ID1414390116"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365800"/>
+        <placeend idref="ID1414388621"/>
+        <annot id="ID1414390117">
+          <posattr x="-616.500000"
+                   y="-363.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">act</text>
+        </annot>
+      </arc>
+      <arc id="ID1414403533"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365794"/>
+        <placeend idref="ID1413737648"/>
+        <annot id="ID1414403534">
+          <posattr x="-611.000000"
+                   y="163.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">AS_c</text>
+        </annot>
+      </arc>
+      <arc id="ID1414407028"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414365794"/>
+        <placeend idref="ID1412323399"/>
+        <annot id="ID1414407029">
+          <posattr x="-471.500000"
+                   y="-87.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">config</text>
+        </annot>
+      </arc>
+      <constraints/>
+      <group id="ID1414365858"
+             name="Threats">
+        <group_elm idref="ID1414365806"/>
+        <group_elm idref="ID1414365809"/>
+        <group_elm idref="ID1414365812"/>
+        <group_elm idref="ID1414365815"/>
+        <group_elm idref="ID1414365794"/>
+        <group_elm idref="ID1414365800"/>
+        <group_elm idref="ID1414365822"/>
+        <group_elm idref="ID1414365824"/>
+        <group_elm idref="ID1414365826"/>
+        <group_elm idref="ID1414365828"/>
+        <group_elm idref="ID1414365830"/>
+      </group>
+    </page>
+    <page id="ID1414336960">
+      <pageattr name="State Space"/>
+      <constraints/>
+      <Aux id="ID1414355602">
+        <posattr x="-691.000000"
+                 y="546.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>use (ogpath^&quot;/ASKCTL/ASKCTLloader.sml&quot;)</text>
+      </Aux>
+      <Aux id="ID1414355812">
+        <posattr x="-691.000000"
+                 y="516.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>Reachable(1,5)</text>
+      </Aux>
+      <Aux id="ID1414356025">
+        <posattr x="-693.000000"
+                 y="483.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>Reachable (5,2)</text>
+      </Aux>
+      <Aux id="ID1414356241">
+        <posattr x="-699.000000"
+                 y="446.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>fun IsInitialMarking n = (n=InitNode);
+val myASKCTLformula = INV (POS(NF(&quot;intial marking&quot;, IsInitialMarking)));</text>
+      </Aux>
+      <Aux id="ID1414356460">
+        <posattr x="-695.000000"
+                 y="407.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>val myASKCTLformula = NOT (MODAL(TT));
+eval myASKCTLformuala 5;</text>
+      </Aux>
+      <ssarc id="ID1414349973"
+             order="1"
+             number="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414349859"/>
+        <destination idref="ID1414349969"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>1:1-&gt;2 Cloud_Model&apos;Auth_S 1: {UI_c={un=&quot;sm&quot;,pw=&quot;t1&quot;},AS_c={un=&quot;sm&quot;,pw=&quot;t1&quot;}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350092"
+             order="1"
+             number="2">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414349969"/>
+        <destination idref="ID1414350088"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>2:2-&gt;3 Cloud_Model&apos;Ctrl_S 1: {AS_c={un=&quot;sm&quot;,pw=&quot;t1&quot;},unvm={un=&quot;sm&quot;,vmid=[]}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350214"
+             order="1"
+             number="3">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350088"/>
+        <destination idref="ID1414350210"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>3:3-&gt;4 Cloud_Model&apos;VMRreq 1: {unvm={un=&quot;sm&quot;,vmid=[]}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350339"
+             order="1"
+             number="4">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350210"/>
+        <destination idref="ID1414350335"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>4:4-&gt;5 Cloud_Model&apos;VM_S 1: {UQ_q={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350479"
+             order="1"
+             number="7">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350335"/>
+        <destination idref="ID1414350467"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>7:5-&gt;8 Cloud_Model&apos;Srvr_lookup 1: {srvr={loc=&quot;host1&quot;,dc=&quot;FRA&quot;},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350484"
+             order="1"
+             number="6">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350335"/>
+        <destination idref="ID1414350471"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>6:5-&gt;7 Cloud_Model&apos;Srvr_lookup 1: {srvr={loc=&quot;host2&quot;,dc=&quot;FRA&quot;},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350489"
+             order="1"
+             number="5">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350335"/>
+        <destination idref="ID1414350475"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>5:5-&gt;6 Cloud_Model&apos;VM_S 1: {UQ_q={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350626"
+             order="1"
+             number="12">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350471"/>
+        <destination idref="ID1414350618"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>12:7-&gt;12 Cloud_Model&apos;T1 1: {VM_req_srvr=({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}),ret_di=&quot;OS&quot;,ret_dhcp={ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;},ret_vnic=&quot;00:14:7B:EE:19:F8&quot;}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350631"
+             order="1"
+             number="11">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350471"/>
+        <destination idref="ID1414350622"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>11:7-&gt;11 Cloud_Model&apos;VM_S 1: {UQ_q={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350773"
+             order="1"
+             number="10">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350475"/>
+        <destination idref="ID1414350622"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>10:6-&gt;11 Cloud_Model&apos;Srvr_lookup 1: {srvr={loc=&quot;host2&quot;,dc=&quot;FRA&quot;},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350778"
+             order="1"
+             number="9">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350475"/>
+        <destination idref="ID1414350765"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>9:6-&gt;10 Cloud_Model&apos;Srvr_lookup 1: {srvr={loc=&quot;host1&quot;,dc=&quot;FRA&quot;},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350783"
+             order="1"
+             number="8">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350475"/>
+        <destination idref="ID1414350769"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>8:6-&gt;9 Cloud_Model&apos;VM_S 1: {UQ_q={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350922"
+             order="1"
+             number="14">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350467"/>
+        <destination idref="ID1414350918"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>14:8-&gt;13 Cloud_Model&apos;T1 1: {VM_req_srvr=({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}),ret_di=&quot;OS&quot;,ret_dhcp={ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;},ret_vnic=&quot;00:14:7B:EE:19:F8&quot;}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414350927"
+             order="1"
+             number="13">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350467"/>
+        <destination idref="ID1414350765"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>13:8-&gt;10 Cloud_Model&apos;VM_S 1: {UQ_q={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414351221"
+             order="1"
+             number="25">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350622"/>
+        <destination idref="ID1414351205"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>25:11-&gt;21 Cloud_Model&apos;T1 1: {VM_req_srvr=({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}),ret_di=&quot;OS&quot;,ret_dhcp={ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;},ret_vnic=&quot;00:14:7B:EE:19:F8&quot;}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414351226"
+             order="1"
+             number="24">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350622"/>
+        <destination idref="ID1414351209"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>24:11-&gt;17 Cloud_Model&apos;Srvr_lookup 1: {srvr={loc=&quot;host1&quot;,dc=&quot;FRA&quot;},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414351231"
+             order="1"
+             number="23">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350622"/>
+        <destination idref="ID1414351213"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>23:11-&gt;20 Cloud_Model&apos;Srvr_lookup 1: {srvr={loc=&quot;host2&quot;,dc=&quot;FRA&quot;},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414351236"
+             order="1"
+             number="22">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350622"/>
+        <destination idref="ID1414351217"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>22:11-&gt;15 Cloud_Model&apos;VM_S 1: {UQ_q={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414351390"
+             order="1"
+             number="17">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350769"/>
+        <destination idref="ID1414351382"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>17:9-&gt;16 Cloud_Model&apos;Srvr_lookup 1: {srvr={loc=&quot;host1&quot;,dc=&quot;FRA&quot;},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414351395"
+             order="1"
+             number="16">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350769"/>
+        <destination idref="ID1414351217"/>
+        <bendpoint id="ID1414351680"
+                   serial="1">
+          <posattr x="-11.000000"
+                   y="-126.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>16:9-&gt;15 Cloud_Model&apos;Srvr_lookup 1: {srvr={loc=&quot;host2&quot;,dc=&quot;FRA&quot;},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssarc id="ID1414351400"
+             order="1"
+             number="15">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern="Solid"
+                  filled="false"/>
+        <lineattr colour=""
+                  thick="0"
+                  type="Solid"/>
+        <textattr colour=""
+                  bold="false"/>
+        <arrowattr headsize="1.000000"
+                   currentcyckle="2"/>
+        <source idref="ID1414350769"/>
+        <destination idref="ID1414351386"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>15:9-&gt;14 Cloud_Model&apos;VM_S 1: {UQ_q={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512},VM_req={un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}}</text>
+        </descriptor>
+      </ssarc>
+      <ssnode id="ID1414349859"
+              number="1"
+              predecessors="0"
+              successors="1">
+        <posattr x="-672.000000"
+                 y="126.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>1:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: 1`{un=&quot;sm&quot;,pw=&quot;t1&quot;}
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: 1`{un=&quot;sm&quot;,pw=&quot;t1&quot;}
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}++
+1`{un=&quot;sm&quot;,vmid=[]}
+Cloud_Model&apos;UQ 1: 4`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: empty
+Cloud_Model&apos;tempo 1: empty
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414349969"
+              number="2"
+              predecessors="1"
+              successors="1">
+        <posattr x="-588.000000"
+                 y="126.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>2:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: 1`{un=&quot;sm&quot;,pw=&quot;t1&quot;}
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}++
+1`{un=&quot;sm&quot;,vmid=[]}
+Cloud_Model&apos;UQ 1: 4`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: empty
+Cloud_Model&apos;tempo 1: empty
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350088"
+              number="3"
+              predecessors="1"
+              successors="1">
+        <posattr x="-504.000000"
+                 y="126.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>3:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: 1`{un=&quot;sm&quot;,vmid=[]}
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 4`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: empty
+Cloud_Model&apos;tempo 1: empty
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350210"
+              number="4"
+              predecessors="1"
+              successors="1">
+        <posattr x="-420.000000"
+                 y="126.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>4:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 4`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 4`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350335"
+              number="5"
+              predecessors="1"
+              successors="3">
+        <posattr x="-336.000000"
+                 y="126.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>5:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350467"
+              number="8"
+              predecessors="1"
+              successors="2">
+        <posattr x="-252.000000"
+                 y="126.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>8:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: 1`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host1&quot;,dc=&quot;FRA&quot;})
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 24`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350471"
+              number="7"
+              predecessors="1"
+              successors="2">
+        <posattr x="-210.000000"
+                 y="74.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>7:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: 1`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;})
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+99`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350475"
+              number="6"
+              predecessors="1"
+              successors="3">
+        <posattr x="-183.000000"
+                 y="22.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>6:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350618"
+              number="12"
+              predecessors="1"
+              successors="2">
+        <posattr x="-126.000000"
+                 y="74.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>12:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: 1`(({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}),&quot;OS&quot;,{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;})
+Cloud_Model&apos;NET 1: 9`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 5`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+99`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350622"
+              number="11"
+              predecessors="2"
+              successors="4">
+        <posattr x="-84.000000"
+                 y="22.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>11:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: 1`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;})
+Cloud_Model&apos;SL 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+99`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350765"
+              number="10"
+              predecessors="2"
+              successors="4">
+        <posattr x="-102.000000"
+                 y="22.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>10:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: 1`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host1&quot;,dc=&quot;FRA&quot;})
+Cloud_Model&apos;SL 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 24`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350769"
+              number="9"
+              predecessors="1"
+              successors="3">
+        <posattr x="-66.000000"
+                 y="-30.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>9:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414350918"
+              number="13"
+              predecessors="1"
+              successors="2">
+        <posattr x="-168.000000"
+                 y="126.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>13:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: 1`(({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}),&quot;OS&quot;,{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;})
+Cloud_Model&apos;NET 1: 9`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 5`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 24`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 3`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414351205"
+              number="21"
+              predecessors="2"
+              successors="4">
+        <posattr x="0.000000"
+                 y="22.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>21:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: 1`(({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}),&quot;OS&quot;,{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;})
+Cloud_Model&apos;NET 1: 9`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 5`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+99`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414351209"
+              number="17"
+              predecessors="2"
+              successors="3">
+        <posattr x="42.000000"
+                 y="-30.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>17:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: 1`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host1&quot;,dc=&quot;FRA&quot;})++
+1`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;})
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 24`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+99`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414351213"
+              number="20"
+              predecessors="1"
+              successors="2">
+        <posattr x="69.000000"
+                 y="-84.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>20:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: 2`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;})
+Cloud_Model&apos;SL 1: empty
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+98`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414351217"
+              number="15"
+              predecessors="2"
+              successors="4">
+        <posattr x="105.000000"
+                 y="-126.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>15:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: 1`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host2&quot;,dc=&quot;FRA&quot;})
+Cloud_Model&apos;SL 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+99`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414351382"
+              number="16"
+              predecessors="2"
+              successors="4">
+        <posattr x="-84.000000"
+                 y="-111.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>16:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: 1`({un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0},{loc=&quot;host1&quot;,dc=&quot;FRA&quot;})
+Cloud_Model&apos;SL 1: 2`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 24`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=512}
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: 1`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+      <ssnode id="ID1414351386"
+              number="14"
+              predecessors="1"
+              successors="2">
+        <posattr x="31.000000"
+                 y="-94.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Gray"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Gray"
+                  bold="false"/>
+        <descriptor x="0.000000"
+                    y="0.000000"
+                    visible="false"
+                    dead="true">
+          <text>14:
+Cloud_Model&apos;VM 1: empty
+Cloud_Model&apos;HYP 1: empty
+Cloud_Model&apos;NET 1: 10`{ip=&quot;192.168.0.1&quot;,mac=&quot;00:14:7B:EE:19:F8&quot;}
+Cloud_Model&apos;DI 1: 6`&quot;OS&quot;
+Cloud_Model&apos;NIC 1: 1`&quot;00:14:7B:EE:19:F8&quot;++
+1`&quot;00:7B:14:F8:19:10&quot;
+Cloud_Model&apos;HS 1: empty
+Cloud_Model&apos;SL 1: 4`{un=&quot;sm&quot;,cpu=&quot;2.4&quot;,ram=8,disk=0}
+Cloud_Model&apos;AR 1: 25`{loc=&quot;host1&quot;,dc=&quot;FRA&quot;}++
+100`{loc=&quot;host2&quot;,dc=&quot;FRA&quot;}
+Cloud_Model&apos;Services 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;temp 1: empty
+Cloud_Model&apos;Atk 1: 1`&quot;local&quot;++
+1`&quot;remote&quot;
+Cloud_Model&apos;Rec 1: 1`{s=&quot;webserver&quot;,i=&quot;rce&quot;}
+Cloud_Model&apos;UI 1: empty
+Cloud_Model&apos;CA 1: empty
+Cloud_Model&apos;AS 1: empty
+Cloud_Model&apos;INT 1: empty
+Cloud_Model&apos;DB 1: 1`{un=&quot;ai&quot;,vmid=[&quot;vm1&quot;,&quot;vm2&quot;]}
+Cloud_Model&apos;UQ 1: empty
+Cloud_Model&apos;VMs 1: 1`[]
+Cloud_Model&apos;tempo 1: empty
+</text>
+        </descriptor>
+        <roundbox w="45.000000"
+                  h="40.000000"/>
+      </ssnode>
+    </page>
+    <instances>
+      <instance id="ID2149"
+                page="ID6"/>
+      <instance id="ID1414336962"
+                page="ID1414336960"/>
+    </instances>
+    <options>
+      <option name="realtimestamp">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="fair_be">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="global_fairness">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="outputdirectory">
+        <value>
+          <text>&lt;same as model&gt;</text>
+        </value>
+      </option>
+      <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10001.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10002.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10006.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="repavg">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="repciavg">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="repcount">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="repfirstval">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="replastval">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="repmax">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="repmin">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="repssquare">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="repssqdev">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="repstddev">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="repsum">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="repvariance">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="avg">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="ciavg">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="count">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="firstval">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="lastval">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="max">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="min">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="ssquare">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="ssqdev">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="stddev">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="sum">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="variance">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="firstupdate">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="interval">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="lastupdate">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="untimedavg">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="untimedciavg">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="untimedcount">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="untimedfirstval">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="untimedlastval">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="untimedmax">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="untimedmin">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="untimedssquare">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="untimedssqdev">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="untimedstddev">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="untimedsum">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="untimedvariance">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+    </options>
+    <binders>
+      <cpnbinder id="ID2222"
+                 x="332"
+                 y="44"
+                 width="1695"
+                 height="947">
+        <sheets>
+          <cpnsheet id="ID1412877194"
+                    panx="182.000000"
+                    pany="-65.000000"
+                    zoom="1.000000"
+                    instance="ID2149">
+            <zorder>
+              <position value="1"/>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1414347024"
+                    panx="50.000000"
+                    pany="441.000000"
+                    zoom="1.000000"
+                    instance="ID1414336962">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+        </sheets>
+        <zorder>
+          <position value="1"/>
+          <position value="0"/>
+        </zorder>
+      </cpnbinder>
+    </binders>
+    <monitorblock name="Monitors"/>
+    <IndexNode expanded="false">
+      <IndexNode expanded="false"/>
+      <IndexNode expanded="false"/>
+      <IndexNode expanded="false">
+        <IndexNode expanded="false"/>
+        <IndexNode expanded="false"/>
+        <IndexNode expanded="false"/>
+        <IndexNode expanded="false"/>
+        <IndexNode expanded="false">
+          <IndexNode expanded="false">
+            <IndexNode expanded="false">
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+            </IndexNode>
+            <IndexNode expanded="false">
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+              <IndexNode expanded="false"/>
+            </IndexNode>
+          </IndexNode>
+          <IndexNode expanded="false">
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+            <IndexNode expanded="false"/>
+          </IndexNode>
+        </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+        </IndexNode>
+      </IndexNode>
+      <IndexNode expanded="false">
+        <IndexNode expanded="false"/>
+      </IndexNode>
+      <IndexNode expanded="true">
+        <IndexNode expanded="false">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+        </IndexNode>
+        <IndexNode expanded="true">
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+        </IndexNode>
+      </IndexNode>
+      <IndexNode expanded="false"/>
+      <IndexNode expanded="true"/>
+      <IndexNode expanded="true"/>
+    </IndexNode>
+  </cpnet>
+</workspaceElements>
